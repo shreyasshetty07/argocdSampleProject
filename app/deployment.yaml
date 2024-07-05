@@ -1,0 +1,21 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-proj-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: argocd-proj-app
+  template:
+    metadata:
+      labels:
+        app: argocd-proj-app
+    spec:
+      containers:
+      - name: web-app
+        image: shredocker07/argocd-proj-app:v1 
+        ports:
+        - containerPort: 3000
+
