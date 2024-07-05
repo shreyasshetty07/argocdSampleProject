@@ -1,4 +1,3 @@
-# deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: shredocker07/argocd-proj-app:v1 
+        image: shredocker07/argocd-proj-app:v1
         ports:
         - containerPort: 3000
 
